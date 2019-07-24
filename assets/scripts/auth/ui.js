@@ -17,11 +17,11 @@ const failureMessage = message => {
 }
 
 const signUpSuccessful = () => {
-  successMessage('You signed up successfully!')
+  successMessage('you have signed up successfully!')
 }
 
 const signUpFailure = () => {
-  failureMessage('Something went wrong, try another email :(')
+  failureMessage('sign up failure, try another email')
 }
 
 const signInSuccessful = responseData => {
@@ -29,7 +29,7 @@ const signInSuccessful = responseData => {
   $('#sign-out').removeClass('hide')
   $('#sign-in').addClass('hide')
   $('#sign-up').addClass('hide')
-  successMessage(`You're logged in :)`)
+  successMessage(`you're currently logged in`)
   store.user = responseData.user
 }
 
@@ -37,9 +37,33 @@ const signInFailure = () => {
   failureMessage(`failed login attempt, check credentials!`)
 }
 
+const changePassSuccessful = responseData => {
+  successMessage('password successfully changed')
+}
+
+const changePassFailure = () => {
+  failureMessage('unable to update password')
+}
+
+const signOutSuccessful = () => {
+  $('#change-password').addClass('hide')
+  $('#sign-out').addClass('hide')
+  $('#sign-in').removeClass('hide')
+  $('#sign-up').removeClass('hide')
+  successMessage(`sign out successful, see you again trainer!`)
+}
+
+const signOutFailure = () => {
+  failureMessage(`unable to sign out`)
+}
+
 module.exports = {
   signUpSuccessful,
   signUpFailure,
   signInSuccessful,
-  signInFailure
+  signInFailure,
+  changePassSuccessful,
+  changePassFailure,
+  signOutSuccessful,
+  signOutFailure
 }
