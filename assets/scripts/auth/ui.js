@@ -27,6 +27,8 @@ const signUpFailure = () => {
 const signInSuccessful = responseData => {
   $('#change-password').removeClass('hide')
   $('#sign-out').removeClass('hide')
+  $('#view-pokemon').removeClass('hide')
+  $('#view-team').removeClass('hide')
   $('#sign-in').addClass('hide')
   $('#sign-up').addClass('hide')
   successMessage(`you're currently logged in`)
@@ -48,6 +50,10 @@ const changePassFailure = () => {
 const signOutSuccessful = () => {
   $('#change-password').addClass('hide')
   $('#sign-out').addClass('hide')
+  $('#view-pokemon').addClass('hide')
+  $('#view-team').addClass('hide')
+  $('.content').addClass('hide')
+  $('#teamMessage').addClass('hide')
   $('#sign-in').removeClass('hide')
   $('#sign-up').removeClass('hide')
   successMessage(`sign out successful, see you again trainer!`)

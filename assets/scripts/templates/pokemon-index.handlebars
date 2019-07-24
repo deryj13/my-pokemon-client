@@ -1,0 +1,24 @@
+{{#each pokemons as |pokemon|}}
+  {{log pokemon}}
+  <section data-id="{{pokemon.id}}">
+    <h6>Species:</h6>
+    <h3>
+      {{pokemon.pokemon}}
+    </h3>
+    <h6>Typing:</h6>
+    <h5>
+      {{pokemon.typing}}
+    </h5>
+    <h6>Tier:</h6>
+    <h5>
+      {{pokemon.tier}}
+    </h5>
+    <h6>Base Stats:</h6>
+    <h5>
+      {{pokemon.base_stats}}
+    </h5>
+    <!-- {{> partial}} -->
+    <button data-id="{{pokemon.id}}" class="btn btn-primary add-pokemon">Add Pokemon</button>
+  </section>
+
+{{/each}}
