@@ -1,26 +1,34 @@
 {{#each teams as |team|}}
   {{log team}}
   <section data-id="{{team.id}}">
-    <h6>Trainer:</h6>
-    <h5>
+    <h5>Trainer:</h5>
+    <h6>
       {{team.user.email}}
-    </h5>
-    <h6>Pokemon:</h6>
-    <h5>
+    </h6>
+    <h5>Nickname:</h5>
+    <p>
+      {{#if team.nickname}}
+        {{team.nickname}}
+      {{else}}
+      None
+      {{/if}}
+    </p>
+    <h5>Pokemon:</h5>
+    <h6>
       {{team.pokemon.pokemon}}
-    </h5>
-    <h6>Typing:</h6>
-    <h5>
+    </h6>
+    <h5>Typing:</h5>
+    <h6>
       {{team.pokemon.typing}}
-    </h5>
-    <h6>Tier:</h6>
-    <h5>
+    </h6>
+    <h5>Tier:</h5>
+    <h6>
       {{team.pokemon.tier}}
-    </h5>
-    <h6>Base Stats:</h6>
-    <h5>
+    </h6>
+    <h5>Base Stats:</h5>
+    <h6>
       {{team.pokemon.base_stats}}
-    </h5>
+    </h6>
     <!-- {{> partial}} -->
     <button data-id="{{team.id}}" class="btn btn-danger remove-pokemon">Remove Pokemon</button>
   </section>
