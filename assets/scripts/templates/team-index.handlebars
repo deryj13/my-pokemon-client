@@ -30,13 +30,17 @@
       {{team.pokemon.base_stats}}
     </h6>
     <!-- {{> partial}} -->
-    <button data-team="{{team.id}}" data-user="{{team.user.id}}" data-pokemon="{{team.pokemon.id}}" class="btn btn-primary nickname-pokemon">
+  <form class="nickname-pokemon" data-team="{{team.id}}" data-pokemon="{{team.pokemon.id}}">
+    <input name="team[nickname]" type="text" placeholder="new nickname">
+    <button class="btn btn-primary" type="submit">
+    <!-- <button data-team="{{team.id}}" data-pokemon="{{team.pokemon.id}}" class="btn btn-primary nickname-pokemon" type="submit"> -->
       {{#if team.nickname}}
         Nickname {{team.nickname}}!
       {{else}}
         Nickname {{team.pokemon.pokemon}}!
       {{/if}}
     </button>
+  </form>
     <button data-team="{{team.id}}" class="btn btn-danger remove-pokemon">Remove Pokemon</button>
   </section>
 

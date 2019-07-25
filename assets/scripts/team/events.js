@@ -2,6 +2,7 @@
 
 const api = require('./api.js')
 const ui = require('./ui.js')
+const getFormFields = require('../../../lib/get-form-fields')
 
 const onGetPokemon = (event) => {
   // event.preventDefault()
@@ -25,14 +26,16 @@ const onGetTeam = (event) => {
     .catch(ui.getTeamFailure)
 }
 
-const onNicknamePokemon = (event) => {
+const onAddNickname = (event) => {
+  event.preventDefault()
+  const form = event.target
+  const teamData = getFormFields(form)
   const teamId = $(event.target).data('team')
-  const userId = $(event.target).data('user')
   const pokemonId = $(event.target).data('pokemon')
-  console.log(`Team ID: ${teamId}, User ID: ${userId} and Pokemon ID: ${pokemonId}`)
-  // api.addNickname(teamId, userId, pokemonId)
-  //   .then(console.log('success'))
-  //   .catch(console.error)
+  // console.log(`Form-Data: ${formData}, Team ID: ${teamId}, and Pokemon ID: ${pokemonId}`)
+  api.addNickname(teamData, teamId, pokemonId)
+    .then(console.log('success'))
+    .catch(console.error)
 }
 
 const onRemovePokemon = (event) => {
@@ -47,7 +50,7 @@ const addHandlers = () => {
   $('#view-pokemon').on('click', onGetPokemon)
   $('#view-team').on('click', onGetTeam)
   $('body').on('click', '.add-pokemon', onAddPokemon)
-  $('body').on('click', '.nickname-pokemon', onNicknamePokemon)
+  $('body').on('submit', '.nickname-pokemon', onAddNickname)
   $('body').on('click', '.remove-pokemon', onRemovePokemon)
 }
 

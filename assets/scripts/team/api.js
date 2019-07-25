@@ -35,6 +35,23 @@ const getTeam = function () {
   })
 }
 
+const addNickname = function (teamData, teamId, pokemonId) {
+  return $.ajax({
+    url: config.apiUrl + '/teams/' + teamId,
+    method: 'PATCH',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    },
+    data: {
+      'team': {
+        'user_id': store.user.id,
+        'pokemon_id': pokemonId,
+        'nickname': teamData.team.nickname
+      }
+    }
+  })
+}
+
 const removePokemon = function (teamId) {
   return $.ajax({
     url: config.apiUrl + '/teams/' + teamId,
@@ -49,5 +66,6 @@ module.exports = {
   getPokemon,
   addPokemon,
   getTeam,
-  removePokemon
+  removePokemon,
+  addNickname
 }
