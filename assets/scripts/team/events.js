@@ -25,8 +25,18 @@ const onGetTeam = (event) => {
     .catch(ui.getTeamFailure)
 }
 
+const onNicknamePokemon = (event) => {
+  const teamId = $(event.target).data('team')
+  const userId = $(event.target).data('user')
+  const pokemonId = $(event.target).data('pokemon')
+  console.log(`Team ID: ${teamId}, User ID: ${userId} and Pokemon ID: ${pokemonId}`)
+  // api.addNickname(teamId, userId, pokemonId)
+  //   .then(console.log('success'))
+  //   .catch(console.error)
+}
+
 const onRemovePokemon = (event) => {
-  const teamId = $(event.target).data('id')
+  const teamId = $(event.target).data('team')
   console.log(teamId)
   api.removePokemon(teamId)
     .then(ui.removePokemonSuccess)
@@ -37,6 +47,7 @@ const addHandlers = () => {
   $('#view-pokemon').on('click', onGetPokemon)
   $('#view-team').on('click', onGetTeam)
   $('body').on('click', '.add-pokemon', onAddPokemon)
+  $('body').on('click', '.nickname-pokemon', onNicknamePokemon)
   $('body').on('click', '.remove-pokemon', onRemovePokemon)
 }
 
