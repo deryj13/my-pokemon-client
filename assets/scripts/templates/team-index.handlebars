@@ -33,7 +33,6 @@
   <form class="nickname-pokemon" data-team="{{team.id}}" data-pokemon="{{team.pokemon.id}}">
     <input name="team[nickname]" type="text" placeholder="new nickname">
     <button class="btn btn-primary" type="submit">
-    <!-- <button data-team="{{team.id}}" data-pokemon="{{team.pokemon.id}}" class="btn btn-primary nickname-pokemon" type="submit"> -->
       {{#if team.nickname}}
         Nickname {{team.nickname}}!
       {{else}}
