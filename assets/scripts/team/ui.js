@@ -31,7 +31,8 @@ const addPokemonSuccess = () => {
 }
 
 const addPokemonFailure = () => {
-  $('#teamMessage').text(`unable to add pokemon to team!`)
+  $('.content').addClass('hide')
+  $('#teamMessage').text(`you already have 6 pokemon! remove a pokemon!`)
 }
 
 const getTeamSuccess = (data) => {
