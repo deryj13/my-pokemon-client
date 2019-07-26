@@ -32,10 +32,10 @@ const onAddNickname = (event) => {
   const teamData = getFormFields(form)
   const teamId = $(event.target).data('team')
   const pokemonId = $(event.target).data('pokemon')
-  // console.log(`Form-Data: ${formData}, Team ID: ${teamId}, and Pokemon ID: ${pokemonId}`)
+  const pokemonName = $(event.target).data('name')
   api.addNickname(teamData, teamId, pokemonId)
-    .then(console.log('success'))
-    .catch(console.error)
+    .then(ui.addNicknameSuccess(teamData, pokemonName))
+    .catch(ui.addNicknameFailure)
 }
 
 const onRemovePokemon = (event) => {

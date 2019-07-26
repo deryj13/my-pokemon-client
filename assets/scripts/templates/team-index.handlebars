@@ -30,7 +30,7 @@
       {{team.pokemon.base_stats}}
     </h6>
     <!-- {{> partial}} -->
-  <form class="nickname-pokemon" data-team="{{team.id}}" data-pokemon="{{team.pokemon.id}}">
+  <form class="nickname-pokemon" data-team="{{team.id}}" data-pokemon="{{team.pokemon.id}}" data-name="{{team.pokemon.pokemon}}">
     <input name="team[nickname]" type="text" placeholder="new nickname">
     <button class="btn btn-primary" type="submit">
       {{#if team.nickname}}

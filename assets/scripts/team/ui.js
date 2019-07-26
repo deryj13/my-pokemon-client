@@ -45,6 +45,15 @@ const getTeamFailure = () => {
   failure('Team Not Available!')
 }
 
+const addNicknameSuccess = (teamData, pokemonName) => {
+  $('.content').addClass('hide')
+  success(`you've changed ${pokemonName}'s name to ${teamData.team.nickname} `)
+}
+
+const addNicknameFailure = () => {
+  failure('unable to nickname pokemon')
+}
+
 const removePokemonSuccess = () => {
   success('successfully removed pokemon from the team!')
 }
@@ -60,6 +69,8 @@ module.exports = {
   addPokemonFailure,
   getTeamSuccess,
   getTeamFailure,
+  addNicknameSuccess,
+  addNicknameFailure,
   removePokemonSuccess,
   removePokemonFailure
 }
