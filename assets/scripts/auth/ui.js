@@ -2,11 +2,18 @@
 
 const store = require('../store')
 
+const clearMessaging = function () {
+  setTimeout(function () {
+    $('#authMessage').text('')
+  }, 3000)
+}
+
 const successMessage = message => {
   $('#authMessage').text(message)
   $('#authMessage').removeClass('failure')
   $('#authMessage').addClass('success')
   $('form').trigger('reset')
+  clearMessaging()
 }
 
 const failureMessage = message => {
@@ -14,6 +21,7 @@ const failureMessage = message => {
   $('#authMessage').removeClass('success')
   $('#authMessage').addClass('failure')
   $('form').trigger('reset')
+  clearMessaging()
 }
 
 const signUpSuccessful = () => {

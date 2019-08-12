@@ -3,16 +3,24 @@
 const showPokemonTemplate = require('../templates/pokemon-index.handlebars')
 const showTeamTemplate = require('../templates/team-index.handlebars')
 
+const clearMessaging = function () {
+  setTimeout(function () {
+    $('#teamMessage').text('')
+  }, 3000)
+}
+
 const success = message => {
   $('#teamMessage').text(message)
   $('#teamMessage').removeClass('failure')
   $('#teamMessage').addClass('success')
+  clearMessaging()
 }
 
 const failure = message => {
   $('#teamMessage').text(message)
   $('#teamMessage').removeClass('success')
   $('#teamMessage').addClass('failure')
+  clearMessaging()
 }
 
 const getPokemonSuccess = (data) => {

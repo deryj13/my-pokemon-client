@@ -40,9 +40,11 @@ const onAddNickname = (event) => {
 
 const onRemovePokemon = (event) => {
   const teamId = $(event.target).data('team')
-  console.log(teamId)
   api.removePokemon(teamId)
     .then(ui.removePokemonSuccess)
+    .then(() => {
+      onGetTeam()
+    })
     .catch(ui.removePokemonFailure)
 }
 
