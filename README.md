@@ -1,7 +1,7 @@
 # Pokemon Team Creator
 
 ## Link to Back End Repo
-
+https://github.com/deryj13/my-pokemon-backend
 ## Technologies Used
 - javascript
 - JQuery
@@ -33,7 +33,7 @@ Things went according to the overall plan. You'd be able to view a list of all t
 pokemon you could use in competetitive play through a database seeded with all the
 viable pokemon. For the update feature of my project I allowed the user to
 nickname the Pokemon in their team. They can also remove and add other pokemon
-as well.  
+as well.
 
 ## Unsolved Problems
 - I wanted to display their strengths and overall weaknesses to other typings
